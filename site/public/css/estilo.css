@@ -26,6 +26,7 @@ body {
   top: 0;
   background-color: black;
   z-index: 1000;
+  transition: .6s;
 }
 
 .pano{
@@ -138,26 +139,30 @@ body {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/1000_F_221708766_VonzyTMtSzIH6BeF6THy2M6G8J7zc0iy.jpg');
   background-size: cover;
+  height: 100vh;
 }
 
 .login .container {
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   height: 100%;
 }
 
 .card {
-  width: 30%;
-  background-color: #e5e5e5;
+  padding: 10px;
+  width: 35%;
   border-radius: 10px;
+  background-color: rgba(0,0,0,.7);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  color: palevioletred;
+  color: #F0D917;
   row-gap: 20px;
+  box-shadow: 0 0 40px rgba(0,0,0,.94);
 }
 
 .card-cadastro {
@@ -187,15 +192,16 @@ body {
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
   height: 30px;
-  text-align: center;
+  padding: 1.9px ;
+  background-color: #e5e5e5;
   border-radius: 10px;
+  outline: none;
+  border: none;
 }
 
 .formulario select {
-  border: 2px solid #32b9cd;
-  background-color: white;
+  background-color: #e5e5e5;
   color: gray;
   height: 36px;
   text-align: center;
@@ -216,7 +222,8 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #e6005a;
+  color: black;
+  background-color: #ffe604;
   width: 120px;
   height: 30px;
   align-self: center;
