@@ -27,6 +27,11 @@ body {
   background-color: black;
   z-index: 1000;
 }
+
+.pano{
+  display: flex;
+  align-items: center;
+}
 .active {
   opacity: .95;
   filter: blur(0.2px);
