@@ -144,7 +144,7 @@
       return false; 
       
     }
-    else if(emailVar.indexOf('@') != true && emailVar.endsWith('.com') != true){
+    else if(emailVar.indexOf('@') != true && emailVar.indexOf('@') > emailVar.indexOf('.')){
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Email invalido";
@@ -152,7 +152,7 @@
       finalizarAguardar();
       return false;
     }
-    else if(senhaVar.length <= 6){
+    else if(senhaVar.length < 6){
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Senha muito curta";
@@ -168,10 +168,10 @@
       finalizarAguardar();
       return false;
     }
-    else if(cpfVar.length != 14){
+    else if(cpfVar.length != 11){
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "cpf invalido - deve ter 14 caracteres";
+        "cpf invalido - deve ter 11 caracteres";
 
       finalizarAguardar();
       return false;
