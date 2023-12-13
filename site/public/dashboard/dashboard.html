@@ -2,12 +2,12 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/Icon da fabrica .png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Fabric | Dashboards</title>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboards.css">
     <script src="../js/sessao.js"></script>
@@ -27,7 +27,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body>
+<body onload="listarSensor()">
 
     <div class="janela">
         <div class="header-left">
@@ -51,6 +51,7 @@
             </div>
 
             <div class="btns-dash" id="btnAquario">
+                <canvas id="myChart"></canvas>
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
             </div>
             <div id="graficos">
@@ -300,4 +301,60 @@
             });
 
     }
+    var fkSensor = 0;
+        var fkEmpresa = sessionStorage.getItem("FK_EMPRESA");
+
+        function listarSensor() {
+            fetch(`/sensores/listarSensor/${fkEmpresa}`, {
+                method: "GET",
+            })
+                .then(function (resposta) {
+                    resposta.json().then((sensor) => {
+                        sensor.forEach((sensor) => {
+                            id_armazem.innerHTML += `<option value='${sensor.idSensor}'>${sensor.nomeSensor}</option>`;
+                        });
+                    });
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                });
+        }
+        const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+};
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First Dataset',
+    data: [65, 59, 80, 81, 56, 55, 40],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(201, 203, 207, 0.2)'
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      'rgb(153, 102, 255)',
+      'rgb(201, 203, 207)'
+    ],
+    borderWidth: 1
+  }]
+};
 </script>
