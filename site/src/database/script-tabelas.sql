@@ -36,13 +36,12 @@ constraint fkempresasensor foreign key (fkEmpresa) references empresa(idEmpresa)
 );
 
 insert into sensorTcrt (nomeSensor, fkEmpresa) values
-	('', 1),
-    ('', 1),
-    ('', 2),
-    ('', 3),
-    ('', 2),
-    ('', 3);
-	
+	('Sensor A', 1),
+    ('Sensor B', 1),
+    ('Sensor C', 2),
+    ('Sensor D', 3),
+    ('Sensor E', 2),
+    ('Sensor F', 3);
 
 create table registro (
 idRegistro int,
