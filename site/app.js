@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/", indexRouter);
-app.user("/empresas", empresaRouter);
+app.use("/empresas", empresaRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/sensores", sensorRouter);
 app.use("/registros", registroRouter);
