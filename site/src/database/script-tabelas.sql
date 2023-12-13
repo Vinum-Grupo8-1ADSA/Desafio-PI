@@ -11,6 +11,11 @@ logradouro varchar(70),
 numero int
 );
 
+insert into empresa (nome, cnpj, email, logradouro, numero) values
+	("Tecidos Soluctions", "01234567892023", "soluctions@gmail.com", "Rua Ana Rosa", 272),
+    ("Irmãos Tecidos", "32029876543210", "irmaos@gmail.com", "Avenida Ipiranga", 797),
+    ("Tecidos Top", "98765432102023", "top@gmail.com", "Rua Chácara Kablin", 286);
+
 create table usuario (
 idUsuario int auto_increment,
 nome varchar(45),
@@ -29,6 +34,15 @@ fkEmpresa int,
 primary key (idSensor, fkEmpresa),
 constraint fkempresasensor foreign key (fkEmpresa) references empresa(idEmpresa)
 );
+
+insert into sensorTcrt (nomeSensor, fkEmpresa) values
+	('', 1),
+    ('', 1),
+    ('', 2),
+    ('', 3),
+    ('', 2),
+    ('', 3);
+	
 
 create table registro (
 idRegistro int,
