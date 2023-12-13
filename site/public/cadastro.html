@@ -25,7 +25,8 @@
       <div class="pano" >
         <img src="assets/icon/Icon da fabrica .png" style="width: 70px;">
         <h1 class="titulo">Tech Fabric</h1>
-      </div>      <ul class="navbar">
+      </div>
+        <ul class="navbar">
         <li>
           <a href="index.html">Inicial</a>
         </li>
@@ -89,8 +90,15 @@
         <div id="div_aguardar" class="loading-div">
           <img src="./assets/circle-loading.gif" id="loading-gif" />
         </div>
-
         <div id="div_erros_login"></div>
+      </div>
+      <div class="card card-cadastro" id="jatem">
+        <p>
+          Já tem uma conta?<br>
+          Sem problemas! <br>
+           entre  clicando <a href="login.html">aqui</a>
+
+        </p>
       </div>
     </div>
   </div>
@@ -232,7 +240,7 @@
       .then(function (resposta) {
         resposta.json().then((empresas) => {
           empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.nome}</option>`;
+            listaEmpresas.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.nome}</option>`;
           });
         });
       })
@@ -245,6 +253,6 @@
     cardErro.style.display = "none";
   }
   window.addEventListener('scroll', function(){
-    header.classList.toggle('active', scrollY > 10)
+    header.classList.toggle('active', scrollY > 100)
   })
 </script>

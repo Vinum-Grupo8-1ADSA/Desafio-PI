@@ -148,7 +148,18 @@ body {
   height: var(--tamanho-login);
   background-image: url('../assets/imgs/1000_F_221708766_VonzyTMtSzIH6BeF6THy2M6G8J7zc0iy.jpg');
   background-size: cover;
-  height: 100vh;
+  height: 90vh;
+}
+#jatem {
+  margin-left: 250px;
+  font-size: 27px;
+  height: 200px;
+  & a {
+    color:#F0D917;
+    font-size: 30px;
+    font-weight: 900;
+    text-decoration: none;
+  }
 }
 
 .login .container {

@@ -24,8 +24,11 @@
 
     <div class="header">
         <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
+            <div class="pano" >
+                <img src="assets/icon/Icon da fabrica .png" style="width: 70px;">
+                <h1 class="titulo">Tech Fabric</h1>
+              </div>
+                <ul class="navbar">
                 <li>
                     <a href="index.html">Inicial</a>
                 </li>
@@ -71,6 +74,14 @@
 
                 <div id="div_erros_login"></div>
             </div>
+            <div class="card card-cadastro" id="jatem">
+                <p>
+                  Não tem uma conta?<br>
+                  Sem problemas! <br>
+                   cadastre-se clicando <a href="cadastro.html">aqui</a>
+        
+                </p>
+              </div>
         </div>
     </div>
 
@@ -130,9 +141,8 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.CPF_USUARIO = json.cpf;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.FK_EMPRESA = json.fkEmpresa;
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
                     }, 1000); // apenas para exibir o loading
