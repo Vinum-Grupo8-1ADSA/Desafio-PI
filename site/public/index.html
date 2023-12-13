@@ -19,9 +19,10 @@
 </head>
 
 <body>
-    <div class="header">
+    <div class="header" id="header">
       <div class="container">
-        <h1 class="titulo">AquaTech</h1>
+        <img src="assets/icon/Untitled.png">
+        <h1 class="titulo">Tech Fabric</h1>
         <ul class="navbar">
           <li class="agora">
             <a href="#">Inicial</a>
@@ -41,8 +42,10 @@
     </div>
   
     <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
+      <div class="gradient">
+        <div class="container">
+          <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
+        </div>
       </div>
     </div>
   
@@ -83,3 +86,9 @@
   </body>
 
 </html>
+<script>
+
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('active', scrollY > 10)
+  })
+</script>

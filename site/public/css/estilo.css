@@ -21,14 +21,23 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  border-bottom: 2px solid #F0D917;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  z-index: 1000;
 }
-
+.active {
+  opacity: .95;
+  filter: blur(0.2px);
+  box-shadow: 0px 10px 10px rgba(0,0,0,.6);
+}
 .header .container {
   justify-content: space-between;
   align-items: center;
   height: 100%;
 }
+
 
 .header a {
   text-decoration: none;
@@ -49,7 +58,8 @@ body {
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #F0D917;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   width: fit-content;
   font-weight: 500;
 }
@@ -60,14 +70,23 @@ body {
 
 .banner {
   height: var(--tamanho-banner);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/Sistema-MES-para-Textil-1-1024x683.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
-
+.gradient {
+  background: linear-gradient(90deg, rgba(0,0,0,.9) 21%, rgba(0,0,0,0.1306722518108806) 86%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
 .banner .container {
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 }
 
 .banner .container p {
